@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-purple-600: hsl(238, 40%, 52%);
+  --color-pink-400: hsl(358, 79%, 66%);
+  --color-purple-200: hsl(239, 57%, 85%);
+  --color-pink-200: hsl(357, 100%, 86%);
+
+  --color-grey-800: hsl(212, 24%, 26%);
+  --color-grey-500: hsl(211, 10%, 45%);
+  --color-grey-100: hsl(223, 19%, 93%);
+  --color-grey-50: hsl(228, 33%, 97%);
+  --color-white: hsl(0, 100%, 100%);
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: var(--color-grey-50);
+  color: var(--color-grey-800);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal-up {
+  animation: revealUp 180ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-reveal-up {
+    animation: none;
+  }
+}

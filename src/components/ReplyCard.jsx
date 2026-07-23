@@ -5,6 +5,7 @@ import CommentComposer from "./CommentComposer";
 
 function ReplyCard({ reply, parentId }) {
   const { state, dispatch } = useContext(CommentsContext);
+  const basePath = import.meta.env.BASE_URL;
   const [isEditing, setIsEditing] = useState(false);
   const [isReplying, setIsReplying] = useState(false);
   const [editedContent, setEditedContent] = useState(reply.content);
@@ -44,7 +45,7 @@ function ReplyCard({ reply, parentId }) {
               aria-label='upvote'
               disabled={currentVote === 1 || voteLocked}>
               <img
-                src='/images/icon-plus.svg'
+                src={`${basePath}images/icon-plus.svg`}
                 alt=''
                 aria-hidden='true'
                 className='h-3 w-3'
@@ -68,7 +69,7 @@ function ReplyCard({ reply, parentId }) {
                 (reply.score === 0 && currentVote !== 1)
               }>
               <img
-                src='/images/icon-minus.svg'
+                src={`${basePath}images/icon-minus.svg`}
                 alt=''
                 aria-hidden='true'
                 className='h-1 w-3'
@@ -103,7 +104,7 @@ function ReplyCard({ reply, parentId }) {
                       onClick={() => setShowDeleteModal(true)}
                       className='inline-flex items-center gap-2 text-sm font-bold text-pink-400 transition hover:text-pink-200'>
                       <img
-                        src='/images/icon-delete.svg'
+                        src={`${basePath}images/icon-delete.svg`}
                         alt=''
                         aria-hidden='true'
                         className='h-3 w-3'
@@ -117,7 +118,7 @@ function ReplyCard({ reply, parentId }) {
                       }}
                       className='inline-flex items-center gap-2 text-sm font-bold text-purple-600 transition hover:text-purple-200'>
                       <img
-                        src='/images/icon-edit.svg'
+                        src={`${basePath}images/icon-edit.svg`}
                         alt=''
                         aria-hidden='true'
                         className='h-3 w-3'
@@ -131,7 +132,7 @@ function ReplyCard({ reply, parentId }) {
                     onClick={() => setIsReplying((value) => !value)}
                     className='inline-flex items-center gap-2 text-sm font-bold text-purple-600 transition hover:text-purple-200'>
                     <img
-                      src='/images/icon-reply.svg'
+                      src={`${basePath}images/icon-reply.svg`}
                       alt=''
                       aria-hidden='true'
                       className='h-3 w-4'
@@ -187,7 +188,7 @@ function ReplyCard({ reply, parentId }) {
                   aria-label='upvote'
                   disabled={currentVote === 1 || voteLocked}>
                   <img
-                    src='/images/icon-plus.svg'
+                    src={`${basePath}images/icon-plus.svg`}
                     alt=''
                     aria-hidden='true'
                     className='h-3 w-3'
@@ -211,7 +212,7 @@ function ReplyCard({ reply, parentId }) {
                     (reply.score === 0 && currentVote !== 1)
                   }>
                   <img
-                    src='/images/icon-minus.svg'
+                    src={`${basePath}images/icon-minus.svg`}
                     alt=''
                     aria-hidden='true'
                     className='h-1 w-3'
@@ -226,7 +227,7 @@ function ReplyCard({ reply, parentId }) {
                       onClick={() => setShowDeleteModal(true)}
                       className='inline-flex items-center gap-2 text-sm font-bold text-pink-400 transition hover:text-pink-200'>
                       <img
-                        src='/images/icon-delete.svg'
+                        src={`${basePath}images/icon-delete.svg`}
                         alt=''
                         aria-hidden='true'
                         className='h-3 w-3'
@@ -240,7 +241,7 @@ function ReplyCard({ reply, parentId }) {
                       }}
                       className='inline-flex items-center gap-2 text-sm font-bold text-purple-600 transition hover:text-purple-200'>
                       <img
-                        src='/images/icon-edit.svg'
+                        src={`${basePath}images/icon-edit.svg`}
                         alt=''
                         aria-hidden='true'
                         className='h-3 w-3'
@@ -254,7 +255,7 @@ function ReplyCard({ reply, parentId }) {
                     onClick={() => setIsReplying((value) => !value)}
                     className='inline-flex items-center gap-2 text-sm font-bold text-purple-600 transition hover:text-purple-200'>
                     <img
-                      src='/images/icon-reply.svg'
+                      src={`${basePath}images/icon-reply.svg`}
                       alt=''
                       aria-hidden='true'
                       className='h-3 w-4'
